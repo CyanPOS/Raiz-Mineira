@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reiz Mineira - Painel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Tela de bloqueio -->
+    <div id="tela-bloqueio" class="tela">
+    <button id="fechar-app" class="botao-fechar">X</button>
+    <div class="conteudo-bloqueio">
+        <h1>Bem-vindo(a) à Reiz Mineira</h1>
+    </div>
+    </div>
+
+    <!-- Tela de senha -->
+    <div id="tela-senha" class="tela escondido">
+    <div class="conteudo-senha">
+        <input type="password" placeholder="Digite a senha" id="senha" />
+    </div>
+    </div>
+
+
+
+<div id="tela-principal" class="tela escondido">
+  <div class="caixa-grade efeito-brilho">
+    <div class="grid-botoes">
+      <div class="botao grande" id="pedidos">
+        <span class="texto-pedido">Acompanhamento de Pedidos</span>
+        <span class="contador-pedidos">0</span>
+      </div>
+      <div class="botao">Gerenciar Reservas</div>
+      <div class="botao">Gerenciar Mesas</div>
+      <div class="botao">Gerenciar Cardápio</div>
+      <div class="botao">Relatórios</div>
+      <div class="botao">Gerenciar Funcionarios</div>
+      <div class="botao logout">Logout</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

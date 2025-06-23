@@ -1,0 +1,212 @@
+:root {
+  --laranja: #ff7734;
+  --laranja-escuro: #cc5f2b;
+  --vermelho-suave: #cc4d4d;
+  --preto-base: #1a1a1a;
+  --cinza-fundo: #2a2a2a;
+}
+
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-color: var(--preto-base);
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Telas */
+.tela {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--preto-base);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.8s ease;
+  z-index: 2;
+}
+
+.escondido {
+  display: none;
+}
+
+/* Botão fechar */
+.botao-fechar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px 14px;
+  background-color: #000;
+  color: var(--laranja);
+  border: 2px solid var(--laranja);
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+.botao-fechar:hover {
+  background-color: var(--laranja-escuro);
+  color: #fff;
+}
+
+@keyframes subirTela {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.subindo {
+  animation: subirTela 0.8s forwards;
+}
+
+/* Conteúdo da tela de bloqueio */
+.conteudo-bloqueio {
+  text-align: center;
+  font-size: 24px;
+  color: var(--laranja);
+}
+
+/* Tela de senha */
+.conteudo-senha {
+  text-align: center;
+}
+
+input[type="password"] {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px solid var(--laranja);
+  background-color: var(--cinza-fundo);
+  color: #fff;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Caixa com brilho (sem animação) */
+.caixa-grade {
+  position: relative;
+  background-color: var(--cinza-fundo);
+  padding: 80px 75px;
+  border-radius: 28px;
+  outline: 2px solid var(--laranja);
+  box-shadow:
+    0 0 25px 6px var(--laranja),
+    inset 0 0 30px 5px rgba(255, 119, 52, 0.3);
+}
+
+/* Grade 2x3 */
+.grid-botoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 20px;
+  width: 100%;
+  max-width: 650px;
+}
+
+/* Botões */
+.botao {
+  background-color: var(--laranja);
+  padding: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 16px;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.botao:hover {
+  background-color: var(--laranja-escuro);
+  transform: translateY(-4px);
+}
+
+/* Botão Acompanhamento */
+.grande {
+  grid-column: span 2;
+  background-color: #e64a19;
+}
+
+/* Botão Logout ocupa 1x2 */
+.logout {
+  background-color: var(--vermelho-suave);
+  grid-row: span 2;
+  grid-column: span 2;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.funcionarios {
+  background-color: var(--laranja);
+  grid-row: span 2;
+  grid-column: span 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.logout:hover {
+  background-color: #b84242;
+}
+
+.botao.grande {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: span 2;
+  background-color: #e64a19;
+  padding: 20px 30px;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 16px;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.texto-pedido {
+  flex: 0 0 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contador-pedidos {
+  flex: 0 0 20%;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 8px 0;
+  min-width: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  user-select: none;
+}
